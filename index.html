@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--  App Title  --> 
+	<title>Sign Up Form</title>
+	<!--  App Description  -->
+	<meta name="description" content="Capture is a free bootstrap v3.3.2 app landing page perfect to present you IOS, android or windows application in an elegant way."/>
+	<meta charset="utf-8">
+	<meta name="author" content="pixelhint.com">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+	<link rel="stylesheet" type="text/css" href="css/owl.transitions.css"/>
+	<link rel="stylesheet" type="text/css" href="css/owl.carousel.css"/>
+	<link rel="stylesheet" type="text/css" href="css/animate.css"/>
+	<link rel="stylesheet" type="text/css" href="css/main.css"/>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/ajaxchimp.js"></script>
+	<script type="text/javascript" src="js/scrollTo.js"></script>
+	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="js/wow.js"></script>
+	<script type="text/javascript" src="js/parallax.js"></script>
+	<script type="text/javascript" src="js/nicescroll.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<!-- Load jQuery and the validate plugin -->
+  <script src="lib/jquery-1.9.1.js"></script>
+  <script src="lib/jquery.validate.min.js"></script>
+  <script>
+	$(function() {
+		// Setup form validation on the #register-form element
+		$("#register-form").validate({   
+			// Specify the validation rules
+			rules: {
+				firstname:"required",
+				lastname:"required",
+				address:"required",
+				zipcode:"required",
+				salary:"required",
+				firstname:{
+					required:true,
+					minlenghth:20
+				},
+				lastname:{
+					required:true,
+					minlength:20
+				},
+				address:{
+					required: true,
+					minlength:50,
+					zipcode: true
+				},
+				zipcode: {
+					required: true,
+					digits: true,
+					minlength: 5,
+					maxlength: 8
+				}
+			},        
+			// Specify the validation error messages
+			messages: {
+				firstname: "Please enter your first name",
+				lastname: "Please enter your last name",
+				address: "Please enter a valid address",
+				zipcode: "Please enter a valid zipcode"
+			},      
+			submitHandler: function(form) {
+				form.submit();
+			}
+		});
+	});
+	</script>
+  <!-- jQuery Form Validation code -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+   <style>
+      #map {
+        width: 500px;
+        height: 400px;
+      }
+    </style>
+  <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map');
+        var mapOptions = {
+          center: new google.maps.LatLng(44.5403, -78.5463),
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
+<body>
+	<!--  Header Section  -->
+	<header>
+		<div class="container">
+			<div class="logo pull-left animated wow fadeInLeft">
+				<img src="img/logo.png" alt="" title="">
+			</div>
+
+			
+			<nav class="pull-left">
+				<ul class="list-unstyled">
+					<li class="animated wow fadeInLeft" data-wow-delay="0s"><a href="#about">Sign In</a></li>
+					<li class="animated wow fadeInLeft" data-wow-delay=".1s"><a href="#app_features">More Services</a></li>
+					<li class="animated wow fadeInLeft" data-wow-delay=".2s"><a href="#testimonials">Contact</a></li>
+				</ul>
+			</nav>
+
+			<div class="social pull-right">
+				<ul class="list-unstyled">
+					<li class="animated wow fadeInRight" data-wow-delay=".2s"><a href="#"><img src="img/facebook.png" alt="" title=""></a></li>
+					<li class="animated wow fadeInRight" data-wow-delay=".1s"><a href="#"><img src="img/twitter.png" alt="" title=""></a></li>
+					<li class="animated wow fadeInRight" data-wow-delay="0s"><a href="#"><img src="img/google.png" alt="" title=""></a></li>
+				</ul>
+			</div>
+
+			<span class="burger_icon">menu</span>
+		</div>
+	</header>
+	<!--  End Header Section  -->
+	<!--  Featured On Section  -->
+	<section class="featured_on">
+		<div class="container">
+			<ul class="list-unstyled text-center clearfix">
+				<li class="col-xs-6 col-sm-6 col-md-3 animated wow fadeInDown">
+					<img src="img/google_logo.png" alt="" title="">
+				</li>
+				<li class="col-xs-6 col-sm-6 col-md-3 animated wow fadeInDown" data-wow-delay=".2s">
+					<img src="img/facebook_logo.png" alt="" title="">
+				</li>
+				<li class="col-xs-6 col-sm-6 col-md-3 animated wow fadeInDown" data-wow-delay=".3s">
+					<img src="img/yahoo_logo.png" alt="" title="">
+				</li>
+				<li class="col-xs-6 col-sm-6 col-md-3 animated wow fadeInDown" data-wow-delay=".4s">
+					<img src="img/paypal_logo.png" alt="" title="">
+				</li>
+			</ul>
+		</div>
+	</section>
+	<!--  End Featured On Section  -->
+	<!--  About Section  -->
+	<section class="about" id="about">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 text-center animated wow fadeInLeft">
+					<div id="map"></div>	
+				</div>
+				<div class="col-md-6 animated wow fadeInRight">
+					<form id="register-form" action="index.html" method="post">
+
+						<h1>Sign Up</h1>
+						<fieldset>
+						  <legend><span class="number">1</span>Your basic info</legend>
+						  <label for="firstname">First Name:</label>
+						  <input type="text" max="20" id="firstname" name="last_name" required>
+						  
+						  <label for="last_name">Last Name:</label>
+						  <input type="text" max="20" id="lastname" name="last_name" required>
+
+						  <label for="address">Address:</label>
+						  <input type="text" max="50" id="address" name="address">
+
+						  <label for="zipcode">Zip Code:</label>
+						  <input type="number" min="5" max="8" id="zipcode" name="zipcode">
+
+						  <label>Gender:</label>
+						  <input type="radio" id="gender" value="M" name="gender">
+						  <label for="Masculine" class="light">M</label>
+						  <input type="radio" id="gender" value="F" name="gender">
+						  <label for="Female" class="light">F</label>
+						</fieldset>
+
+						<fieldset>
+						  <legend><span class="number">2</span>Your profile</legend>
+						  <label for="bio">Biography:</label>
+						  <textarea id="bio" name="person_bio"></textarea>
+						</fieldset>
+						<fieldset>
+						  <label for="salary">salary:</label>
+						  <select id="salary" name="salary">
+							<option value="salary0_2">$0K-$20K"</option>
+							<option value="salary2_5">21K-$50K</option>
+							<option value="salary5_1">$51K-$100K+</option>
+						  </select>
+						</fieldset>
+						<button type="submit">Sign Up</button>
+					  </form>					
+				</div>
+			</div>
+		</div>
+
+		<div class="about_video show_video">
+			<a href="" class="close_video"></a>
+		</div>
+	</section>
+	<!--  End About Section  -->
+	<!--  App Features Section  -->
+	<section class="app_features" id="app_features">
+		<div class="container">
+
+			<div class="row text-center">
+				<div class="col-sm-4 col-md-4 details animated wow fadeInDown" data-wow-delay="0s"> 
+  </div>
+				<div class="col-sm-4 col-md-4 details animated wow fadeInDown" data-wow-delay=".1s">
+						
+					</div>
+				
+			</div>
+
+		</div>
+	</section>
+	<!--  And App Features Section  -->
+</body>
+</html>
